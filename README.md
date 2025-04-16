@@ -1,16 +1,23 @@
-## Hi there 👋
+function bubbleSort(arr) {
+  let n = arr.length;
+  let swapped;
 
-<!--
-**DaviOcanha/DaviOcanha** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  do {
+    swapped = false;
+    for (let i = 0; i < n - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // Troca os elementos
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        swapped = true;
+      }
+    }
+    n--; 
+  } while (swapped);
 
-Here are some ideas to get you started:
+  return arr;
+}
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+const array = [97, 45, 49, 32, 2, 5, 9, 99, 1, 7];
+console.log("Original:", array);
+const sorted = bubbleSort(array);
+console.log("Ordenado:", sorted);
